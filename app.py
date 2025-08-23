@@ -1,6 +1,7 @@
 # Trigger rebuild
 
 import gradio as gr
+import streamlit as st
 import google.generativeai as genai
 import os
 from PIL import Image
@@ -316,4 +317,4 @@ def build_interface():
 if __name__ == "__main__":
     chatbot_app = build_interface()
     chatbot_app.queue()
-    chatbot_app.launch(share=True, debug=True)
+    chatbot_app.launch(server_name="0.0.0.0", server_port=7860, share=False)
